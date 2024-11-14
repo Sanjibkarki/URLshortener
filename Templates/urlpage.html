@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URLshortener</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        .Container{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .box{
+            display: flex;
+            flex-direction: column;
+            gap: 100px;
+            width: fit-content;
+            height: min-content;
+        }
+        button{
+            margin-top: 10px;
+            height: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="Container">
+
+        <div class="box">
+            <h1>URLshortener</h1>
+                <div>
+                    <input id="myInput" type="text" readonly value="{{urlpath}}">
+                    <button onclick="copyToClipboard()">Copy</button>
+                </div>
+            
+        
+                
+        </div>
+    </div>
+    <script>
+        function copyToClipboard() {
+            var inputField = document.getElementById("myInput");
+
+            inputField.select();
+            inputField.setSelectionRange(0, 99999); 
+
+            document.execCommand("copy");
+
+            alert("Copied the text: " + inputField.value);
+        }
+    </script>
+</body>
+</html>
